@@ -2,6 +2,8 @@
 
 :root{
     --yellow:#f9ca24;
+    --box-shadow:.2rem .2rem 1rem #f9cb2471,
+    -.1rem -.1rem 1rem rgba(255, 255, 255, 0.068);
 }
 
 *{
@@ -98,8 +100,9 @@ header .user img{
     width:17rem;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
     border:.7rem solid var(--yellow);
+    margin-top: 25px;
 }
 
 header .user .name{
@@ -110,6 +113,7 @@ header .user .name{
 header .user .post{
     font-size: 2rem;
     color:#eee;
+    margin-bottom: 0.2rem;
 }
 
 header .navbar{
@@ -226,6 +230,59 @@ header .navbar ul li a:hover{
     color:#fff;
 }
 
+.about .row .progress{
+    flex:1 1 40rem;
+    padding: 15px;
+}
+
+.about .row .progress h2{
+    color:#fff;
+    font-weight: normal;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .row .progress .bar{
+    box-shadow: var(--box-shadow);
+    border-radius: 5rem;
+    height:2rem;
+    padding:.5rem;
+    margin:1rem 0;
+}
+
+.about .row .progress .bar span{
+    display: block;
+    height: 100%;
+    background: var(--yellow);
+    border-radius: 5rem;
+}
+
+.about .row .progress .bar-1-1 span{
+    width: 90%;
+}
+
+.about .row .progress .bar-1-2 span{
+    width: 75%;
+}
+
+.about .row .progress .bar-1-3 span{
+    width: 80%;
+}
+
+.about .row .progress .bar-2-1 span{
+    width: 95%;
+}
+
+.about .row .progress .bar-2-2 span{
+    width: 89%;
+}
+
+.about .row .progress .bar-2-3 span{
+    width: 65%;
+}
+
 .education .box-container{
     display: flex;
     align-items: center;
@@ -233,6 +290,7 @@ header .navbar ul li a:hover{
     flex-wrap: wrap;
     padding:1rem 0;
     padding-left: 3rem;
+    
 }
 
 .education .box-container .box{
@@ -274,6 +332,60 @@ header .navbar ul li a:hover{
     font-size: 2rem;
     color:#fff;
     background:var(--yellow);
+}
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:2rem;
+    margin-top: 50px;
+}
+
+.services .box-container .box{
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 0;
+    overflow:hidden;
+}
+
+.services .box-container .box i{
+    font-size:4rem;
+    padding-bottom: 5rem;
+    color:#fff;
+}
+
+.services .box-container .box h3{
+    font-size:2rem;
+    padding-bottom: 1rem;
+    color: #fff;
+}
+
+.services .box-container .box p{
+    font-size:1.4rem;
+    line-height: 1.8;
+    color: rgb(219, 217, 217);
+}
+
+.services .box-container .box::before{
+    content: '';
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: #e0ba30;
+    z-index: -1;
+    clip-path: circle(9rem at 5% 0%);
+    transition: .3s linear;
+}
+
+.services .box-container .box:hover::before{    
+    clip-path: circle(100%);
+}
+
+.services .box-container .box:hover > *{
+    color:#fff;
 }
 
 .portfolio .box-container{
